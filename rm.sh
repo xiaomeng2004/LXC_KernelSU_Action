@@ -1,3 +1,4 @@
+ 
 #!/bin/sh
 GKI_ROOT=$(pwd)
 if test -d "$GKI_ROOT/common/drivers"; then
@@ -5,7 +6,7 @@ if test -d "$GKI_ROOT/common/drivers"; then
 elif test -d "$GKI_ROOT/drivers"; then
     DRIVER_DIR="$GKI_ROOT/drivers"
 else
-    echo '[ERROR] "drivers/" directory not found.'
+    echo '[错误] "drivers/" 目录未找到。'
     exit 127
 fi
 
@@ -23,3 +24,4 @@ sed -i '/drivers\/kernelsu\/Kconfig/d' "$DRIVER_KCONFIG"
 
 # 删除KernelSU目录
 rm -rf "$GKI_ROOT/KernelSU"
+ 
