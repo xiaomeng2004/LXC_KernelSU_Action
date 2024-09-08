@@ -99,7 +99,6 @@ jobs:
             echo "HAVE_SOURCE_BOOT_IMAGE=true" >> $GITHUB_ENV
         fi
     - name: del KernelSU
-      if: env.DEL_KERNELSU == 'true'
       run: | 
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         curl -LSs "https://github.com/xiaomeng2004/LXC_KernelSU_Action/blob/main/rm.sh"
