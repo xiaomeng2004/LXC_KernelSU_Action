@@ -101,7 +101,7 @@ jobs:
     - name: del KernelSU
       run: | 
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        curl -LSs "https://github.com/xiaomeng2004/LXC_KernelSU_Action/blob/main/rm.sh"
+        wget "https://github.com/xiaomeng2004/LXC_KernelSU_Action/blob/main/rm.sh"
         chmod +x ./rm.sh
         ./rm.sh
         
