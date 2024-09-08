@@ -107,18 +107,10 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://android.googlesource.com/platform/system/tools/mkbootimg tools -b master-kernel-build-2022 --depth=1
 
-    - name: del KernelSU
-      if: env.DEL_KERNELSU == 'true'
-      run: | 
-        cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        curl -LSs "https://github.com/xiaomeng2004/LXC_KernelSU_Action/blob/main/rm.sh"
-        chmod +x ./rm.sh
-        ./rm.sh
-
     - name: Download kernel source
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel --recursive
+        git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel 
 
     - name: Download source boot image
       if: env.BUILD_BOOT_IMG == 'true'
